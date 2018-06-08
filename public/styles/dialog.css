@@ -1,0 +1,58 @@
+.box-dialog  {
+	background-color: white;
+	margin: auto;
+	position: fixed;
+	display: none;
+	z-index: 2;
+	height: 100%;
+	overflow-y: auto;
+	top: 0;
+	background-color: rgba(0,0,0,0.5);
+	height: 100%;
+	width: 100%;
+}
+
+#loading-indicator {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.box-news {
+	background-color: white;
+	width: calc(100% - 2px);
+	margin-left: 2px;
+}
+.box-dialog-header.btn-close {
+	border-radius: 0;
+	position: fixed;
+	width: 38px;
+	top: 0;
+}
+.dark-background {
+	display: none;
+	position: fixed;
+	top: 0;
+	background-color: #0000005c;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}
+.description a{
+	display: none;
+}
+/*24h.com.vn*/
+.padTB5 {
+	width: 100%;
+}
+/* /24h.com.vn*/
+.box-news-content *{
+	margin: auto;
+}
+.box-news-content img{
+	display: flex;
+	max-width: 100%;
+}
