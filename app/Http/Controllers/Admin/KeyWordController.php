@@ -65,8 +65,8 @@ class KeyWordController extends Controller
     public function edit($id)
     {   
         $edit = keyword::findorfail($id);
-
-        return view('admin.keywords.edit',compact('edit'));
+        $categories = Category::pluck('name', 'id');
+        return view('admin.keywords.edit',compact('edit', 'categories'));
     }
 
     /**
