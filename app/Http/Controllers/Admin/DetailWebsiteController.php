@@ -18,7 +18,7 @@ class DetailWebsiteController extends Controller
     public function index()
     {
 
-        $detailWebsites = DetailWebsite::all();
+        $detailWebsites = DetailWebsite::with('website')->get();
         return view('admin.detailwebsite.index', compact('detailWebsites'));
     }
 
@@ -29,7 +29,7 @@ class DetailWebsiteController extends Controller
      */
     public function create()
     {
-        $domainNames = Website::pluck('domainName', 'domainName');
+        $domainNames = Website::pluck('domainName', 'id');
         return view('admin.detailwebsite.create', compact('domainNames'));
     }
 
@@ -69,7 +69,7 @@ class DetailWebsiteController extends Controller
     public function edit($id)
     {
         //
-        $domainNames = Website::pluck('domainName', 'domainName');
+        $domainNames = Website::pluck('domainName', 'id');
         $detailWebsite = DetailWebsite::findOrFail($id);
         return view('admin.detailwebsite.edit', compact('detailWebsite', 'domainNames'));
     }

@@ -34,3 +34,14 @@
   {!! Form::close() !!}
 </div>
 @stop
+@section('css')
+<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+@endsection
+@section('script')
+<script type="text/javascript" src="vendor/select2/select2.min.js" ></script>
+<script>
+    $(document).ready(function(){
+        $('select').select2();
+    });
+</script>
+@endsection

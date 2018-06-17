@@ -26,7 +26,7 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th><input type="checkbox" class="thCbDelete"></th>
+                    <th><input type="checkbox" class="parent-checkbox-delete"></th>
                     <th>Id</th>
                     <th>Name</th>
                     <th>Edit</th>
@@ -34,7 +34,7 @@
                 </thead>
                 <tfoot>
                   <tr>
-                    <th><input type="checkbox" class="thCbDelete"></th>
+                    <th><input type="checkbox" class="parent-checkbox-delete"></th>
                     <th>Id</th>
                     <th>Name</th>
                     <th>Edit</th>
@@ -43,7 +43,7 @@
                 <tbody>
                   @foreach($categories as $data)
                   <tr>
-                    <td><input type="checkbox" class="tdCbDelete" name="idCheckbox[]" value="{{$data->id}}"></td>
+                    <td><input type="checkbox" class="checkbox-delete" name="idCheckbox[]" value="{{$data->id}}"></td>
                     <td>{{$data->id}}</td>
                     <td>{{$data->name}}</td>
                     <td><a href="{{ URL::route('category.edit', ['category' => $data->id]) }}" class="btn btn-success">Edit</a></td>

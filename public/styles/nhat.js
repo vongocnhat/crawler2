@@ -1,1 +1,1 @@
-$('video').attr('controls');
+// $('video').attr('controls');

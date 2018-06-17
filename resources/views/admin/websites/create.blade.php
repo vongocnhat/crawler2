@@ -7,36 +7,36 @@
 <hr>
 <div class="form-group">
 {{ Form::label('domainName','DomainName')}}
-{{ Form::text('domainName','', ['class'=>'form-control', 'required' => 'required']) }}
+{{ Form::text('domainName',null, ['class'=>'form-control', 'required' => 'required']) }}
 </div>  
 <div class="form-group">
 {{ Form::label('menuTag','MenuTag ')}} 
-{{ Form::text('menuTag','',['class'=>'form-control', 'required' => 'required'])}}
+{{ Form::text('menuTag',null,['class'=>'form-control', 'required' => 'required'])}}
 </div>
 <div class="form-group">
 {{form::label('numberPage','NumberPage')}}
-{{form::number('numberPage','',['class'=>'form-control', 'required' => 'required'])}}
+{{form::number('numberPage', 5,['class'=>'form-control', 'required' => 'required'])}}
 </div>
 <div class="form-group">
 {{form::label('limitOfOnePage','LimitOfOnePage:')}}
-{{form::number('limitOfOnePage','',['class'=>'form-control', 'required' => 'required'])}}
+{{form::number('limitOfOnePage', 0,['class'=>'form-control', 'required' => 'required'])}}
 </div>
 <div class="form-group">
 {{form::label('stringFirstPage','StringFirstPage:')}}
-{{form::text('stringFirstPage','',['class'=>'form-control', 'required' => 'required'])}}
+{{form::text('stringFirstPage',null,['class'=>'form-control', 'required' => 'required'])}}
 </div>
 <div class="form-group">
 {{form::label('stringLastPage','StringLastPage:')}}
-{{form::text('stringLastPage','',['class'=>'form-control'])}}
+{{form::text('stringLastPage',null,['class'=>'form-control'])}}
 </div>
-  <div class="form-group">
-    {{form::label('bodyTag','BodyTag:')}}
-    {{form::text('bodyTag',null,['class'=>'form-control', 'required' => 'required'])}}
-  </div>
-  <div class="form-group">
-    {{form::label('exceptTag','exceptTag:')}}
-    {{form::text('exceptTag',null,['class'=>'form-control'])}}
-  </div>
+<div class="form-group">
+  {{Form::label('ignoreWebsite','Bỏ Qua Các Đường Dẫn ( Không bắt buộc ):')}}
+  {{Form::textarea('ignoreWebsite', null, ['class'=>'form-control', 'rows' => '4'])}}
+  <span>
+    Các đường dẫn được ngăn cách bởi đấu ;<br>
+    Ví dụ: https://www.24h.com.vn/tin-tuc-trong-ngay-c46.html;https://www.24h.com.vn/bong-da-c48.html
+  </span>
+</div>
   <div class="form-group" >
     {{form::label('Active','Active:')}}
     <div class="form-check form-check-inline">

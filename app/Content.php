@@ -8,8 +8,9 @@ class Content extends Model
 {
     //
     protected $fillable = [
-        'domainName', 'title', 'link', 'description', 'pubDate', 'body', 'active'
+        'category_id', 'title', 'link', 'description', 'pubDate', 'sourceOfNews', 'active'
     ];
+
     public $timestamps = false;
 
 }

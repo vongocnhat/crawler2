@@ -1,8 +1,20 @@
 @extends('admin.layouts.default')
 @section('content')
-      <div class="card mb-3">
-        <div class="card-header card-header-padding">
-        <a href="{{ URL::route('detailwebsite.create') }}" class="btn btn-success">Create</a>
+<!-- Breadcrumbs-->
+<div class="row">
+  @if(Session::has('ketqua')) 
+    <p class="alert alert-success">{{Session::get('ketqua')}}</p>
+  @endif
+</div>
+      <!-- Example DataTables Card-->
+<div class="card">
+    <div class="card-header card-header-padding">
+      <a href="{{route('detailwebsite.create')}}">
+         <button class="btn btn-primary">
+        <span class="far fa-address-book"></span>
+           Create
+         </button>
+      </a>
         <div class="card-body card-body-padding">
           <div class="table-responsive">
             {!! Form::open(['method' => 'DELETE', 'route' => ['detailwebsite.destroy', 'detailwebsite' => 0]]) !!}
@@ -10,26 +22,26 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th><input type="checkbox" class="thCbDelete"></th>
+                    <th><input type="checkbox" class="parent-checkbox-delete"></th>
                     <th>Id</th>
                     <th>DomainName</th>
                     <th>ContainerTag</th>
                     <th>TitleTag</th>
-                    <th>SummaryTag</th>
-                    <th>UpdateTimeTag</th>
+                    <th>DescriptionTag</th>
+                    <th>PubDateTag</th>
                     <th>Active</th>
                     <th>Edit</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                    <th><input type="checkbox" class="thCbDelete"></th>
+                    <th><input type="checkbox" class="parent-checkbox-delete"></th>
                     <th>Id</th>
                     <th>DomainName</th>
                     <th>ContainerTag</th>
                     <th>TitleTag</th>
-                    <th>SummaryTag</th>
-                    <th>UpdateTimeTag</th>
+                    <th>DescriptionTag</th>
+                    <th>PubDateTag</th>
                     <th>Active</th>
                     <th>Edit</th>
                   </tr>
@@ -37,13 +49,13 @@
                 <tbody>
                   @foreach($detailWebsites as $data)
                   <tr>
-                    <td><input type="checkbox" class="tdCbDelete" name="idCheckbox[]" value="{{$data->id}}"></td>
+                    <td><input type="checkbox" class="checkbox-delete" name="idCheckbox[]" value="{{$data->id}}"></td>
                     <td>{{ $data->id }}</td>
-                    <td>{{ $data->domainName }}</td>
+                    <td>{{ $data['website']->domainName }}</td>
                     <td>{{ $data->containerTag }}</td>
                     <td>{{ $data->titleTag }}</td>
-                    <td>{{ $data->summaryTag }}</td>
-                    <td>{{ $data->updateTimeTag }}</td>
+                    <td>{{ $data->descriptionTag }}</td>
+                    <td>{{ $data->pubDateTag }}</td>
                     <td>
                       <label><input type="checkbox" class="tdCbActive" value="{{ $data->id }}" {{$data->active ? 'checked="checked' : '' }}"><span>{{ $data->active ? ' Yes' : ' No' }}</span></label>
                     </td>

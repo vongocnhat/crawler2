@@ -16,8 +16,19 @@ class Category extends Model
 		return $this->hasMany('App\KeyWord');
 	}
 
+	public function keyWordsActive()
+	{
+		return $this->hasMany('App\KeyWord')->where('active', 1);
+	}
+
 	public function contents()
 	{
 		return $this->hasMany('App\Content');
 	}
+
+	public function contentsActive()
+	{
+		return $this->hasMany('App\Content')->where('active', 1);
+	}
+
 }

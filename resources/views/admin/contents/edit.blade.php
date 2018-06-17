@@ -7,30 +7,49 @@
   <h1 >Edit </h1>
   <hr>
   <div class="form-group">
+    {{ Form::label('category_id', 'Category Name:') }}
+    {{ Form::select('category_id', $categories, null, ['class' => 'form-control', 'placeholder' => 'Select Category Name', 'required']) }}
+  </div>
+  <div class="form-group">
     {{ Form::label('title','title ')}}
-    {{ Form::text('title',$edit->title,['class'=>'form-control', 'required' => 'required']) }}
+    {{ Form::text('title',null,['class'=>'form-control', 'required' => 'required'])}}
   </div>
   <div class="form-group">
     {{form::label('link','link')}}
-    {{form::text('link',$edit->link,['class'=>'form-control', 'required' => 'required'])}}
+    {{form::text('link',null,['class'=>'form-control', 'required' => 'required'])}}
   </div>
   <div class="form-group">
     {{form::label('description','description:')}}
-    {{form::textarea('description',$edit->description,['class'=>'form-control', 'rows' => 5])}}
+    {{form::textarea('description',null,['class'=>'form-control', 'rows' => 5])}}
   </div>
   <div class="form-group" >
     {{form::label('Active','Active:')}}
     <div class="form-check form-check-inline">
-      {{ Form::radio('active',1, null, ['class' =>'form-check-input', 'id' => 'yes']) }}
+      {{ Form::radio('active',1, true, ['class' =>'form-check-input', 'id' => 'yes']) }}
       {{Form::label('yes','Yes',['class'=>'form-check-label'])}}
      </div>
     <div class="form-check form-check-inline">
       {{Form::radio('active',0, null, ['class' =>'form-check-input', 'id' => 'no'])}}
       {{Form::label('no','No',['class'=>'form-check-label'])}}  
     </div>
+    <div class="form-group">
+      {{form::label('sourceOfNews','SourceOfNews (Nguồn):')}}
+      {{form::text('sourceOfNews',null,['class'=>'form-control', 'required' => 'required'])}}
+    </div>
   </div>
   <div class="form-group">
-    {{form::submit('Send to as admin',['class'=>'btn btn-primary'])}}
+    {{form::submit('Update',['class'=>'btn btn-primary'])}}
   </div>
       {!! Form::close() !!}
-    @stop
+@stop
+@section('css')
+<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+@endsection
+@section('script')
+<script type="text/javascript" src="vendor/select2/select2.min.js" ></script>
+<script>
+    $(document).ready(function(){
+        $('select').select2();
+    });
+</script>
+@endsection

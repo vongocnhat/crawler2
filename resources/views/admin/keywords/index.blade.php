@@ -1,20 +1,21 @@
 @extends('admin.layouts.default')
 @section('title',"Kiem Tra")
 @section('content')
-      <div class="row">
+<!-- Breadcrumbs-->
+<div class="row">
   @if(Session::has('ketqua')) 
     <p class="alert alert-success">{{Session::get('ketqua')}}</p>
   @endif
 </div>
       <!-- Example DataTables Card-->
-      <div class="card mb-3">
-        <div class="card-header card-header-padding">
-          <a class="nav-link" href="{{URL::route('keyword.create')}}">
-             <button>
-            <span class="far fa-address-book"></span>
-               Create
-             </button>
-          </a>
+<div class="card">
+    <div class="card-header card-header-padding">
+      <a href="{{route('keyword.create')}}">
+         <button class="btn btn-primary">
+        <span class="far fa-address-book"></span>
+           Create
+         </button>
+      </a>
         <div class="card-body card-body-padding">
 
           <div class="table-responsive">
@@ -26,7 +27,7 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th><input type="checkbox" class="thCbDelete"></th>
+                    <th><input type="checkbox" class="parent-checkbox-delete"></th>
                     <th>Id</th>
                     <th>Category</th>
                     <th>Name</th>
@@ -36,7 +37,7 @@
                 </thead>
                 <tfoot>
                   <tr>
-                    <th><input type="checkbox" class="thCbDelete"></th>
+                    <th><input type="checkbox" class="parent-checkbox-delete"></th>
                     <th>Id</th>
                     <th>Category</th>
                     <th>Name</th>
@@ -47,7 +48,7 @@
                 <tbody>
                   @foreach($keyWord as $data)
                   <tr>
-                    <td><input type="checkbox" class="tdCbDelete" name="idCheckbox[]" value="{{$data->id}}"></td>
+                    <td><input type="checkbox" class="checkbox-delete" name="idCheckbox[]" value="{{$data->id}}"></td>
                     <td>{{$data->id}}</td>
                     <td>{{ $data->category->name }}</td>
                     <td>{{$data->name}}</td>

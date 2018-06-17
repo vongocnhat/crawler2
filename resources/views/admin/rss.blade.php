@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
 </head>
 <body>
-<a class="btn btn-success" href="{{ route('home') }}">Home</a><br>
+<a class="btn btn-success" href="{{ route('homePage') }}">Home</a><br>
 <div class="row">
 	<div class="col-6">
 		<table class="table table-bordered">

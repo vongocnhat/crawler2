@@ -8,12 +8,12 @@ class Website extends Model
 {
     //
     protected $fillable = [
-        'domainName', 'menuTag', 'numberPage', 'limitOfOnePage', 'stringFirstPage', 'stringLastPage', 'bodyTag', 'exceptTag', 'active'
+        'domainName', 'menuTag', 'numberPage', 'limitOfOnePage', 'stringFirstPage', 'stringLastPage', 'ignoreWebsite', 'active'
     ];
     
-    public function DetailWebsites() {
+    public function detailWebsites() {
     	// return $this->hasMany( ‘TenModel’ , ‘KhoaPhu’, ‘KhoaChinh’ );
-    	return $this->hasMany('App\DetailWebsite' , 'domainName', 'domainName' );
+    	return $this->hasMany('App\DetailWebsite');
     }
 
     public $timestamps = false;

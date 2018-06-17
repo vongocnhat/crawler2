@@ -8,12 +8,12 @@ class DetailWebsite extends Model
 {
     //
     protected $fillable = [
-        'domainName', 'containerTag', 'titleTag', 'summaryTag', 'updateTimeTag', 'active'
+        'website_id', 'containerTag', 'titleTag', 'descriptionTag', 'pubDateTag', 'active'
     ];
 
-    public function Websites()
+    public function website()
     {
-        return $this->belongsTo('App\Website', 'domainName', 'domainName');
+        return $this->belongsTo('App\Website');
     }
 
     public $timestamps = false;

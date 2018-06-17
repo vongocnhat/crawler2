@@ -5,6 +5,20 @@
 .card-body-padding {
 	padding: 0;
 }
+
+.m-t-b {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.nhat-menus {
+	overflow: auto;
+}
+
+.nhat-menus .nav-link {
+	padding: 10px !important;
+}
+
 #dataTable_wrapper {
 	padding: 5px 5px 0 0;
 }
@@ -21,4 +35,16 @@
 
 label {
 	font-weight: bold;
+}
+
+.circle-number {
+	background-color: #e40101;
+    width: 22px;
+    display: block;
+    text-align: center;
+    line-height: 22px;
+    height: 22px;
+    border-radius: 50%;
+    color: #fff;
+    margin-left: 5px;
 }

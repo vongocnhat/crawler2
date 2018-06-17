@@ -69,7 +69,7 @@ CREATE TABLE `detail_websites` (
   `domainName` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `containerTag` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `titleTag` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `summaryTag` text COLLATE utf8mb4_unicode_ci,
+  `descriptionTag` text COLLATE utf8mb4_unicode_ci,
   `updateTimeTag` text COLLATE utf8mb4_unicode_ci,
   `active` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -78,7 +78,7 @@ CREATE TABLE `detail_websites` (
 -- Dumping data for table `detail_websites`
 --
 
-INSERT INTO `detail_websites` (`id`, `domainName`, `containerTag`, `titleTag`, `summaryTag`, `updateTimeTag`, `active`) VALUES
+INSERT INTO `detail_websites` (`id`, `domainName`, `containerTag`, `titleTag`, `descriptionTag`, `updateTimeTag`, `active`) VALUES
 (3, 'http://www.24h.com.vn', '.boxDoi-sub-Item-trangtrong', '.news-title a', '.news-sapo', '.update-time', 1),
 (4, 'https://vnexpress.net', '.sidebar_1 > .list_news', '.title_news > a', '.description', '', 1),
 (5, 'http://www.24h.com.vn', '#home-sum-1', '.news-title16-G', '.news-sapo', '.update-time', 1);
